@@ -14,6 +14,7 @@ import java.util.List;
 public class FakeStoreProductService implements ProductService {
     @Override
     public Product getProductById(Long id) {
+
         RestTemplate restTemplate = new RestTemplate();
         FakeStoreProductDto fakeStoreProductDto  = restTemplate.getForObject("https://fakestoreapi.com/products/" + id, FakeStoreProductDto.class);
 
@@ -38,6 +39,7 @@ public class FakeStoreProductService implements ProductService {
         FakeStoreProductDto[] fakeStoreProductDtos = restTemplate.getForObject("https://fakestoreapi.com/products", FakeStoreProductDto[].class);
         List<Product> products = new ArrayList<>();
         for (FakeStoreProductDto fakeStoreProductDto : fakeStoreProductDtos) {
+
             Product product = new Product();
             product.setId(fakeStoreProductDto.getId());
             product.setTitle(fakeStoreProductDto.getTitle());
