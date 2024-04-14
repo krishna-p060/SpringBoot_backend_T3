@@ -1,6 +1,7 @@
 package com.javaBackendT3.demo.services;
 
 import com.javaBackendT3.demo.dtos.FakeStoreProductDto;
+import com.javaBackendT3.demo.exceptions.ProductNotFoundException;
 import com.javaBackendT3.demo.models.Category;
 import com.javaBackendT3.demo.models.Product;
 //import org.springframework.stereotype.Component;
@@ -31,7 +32,7 @@ public class FakeStoreProductService implements ProductService {
             product.setImage(fakeStoreProductDto.getImage());
             return product;
         }
-        return null;
+        throw new ProductNotFoundException(id, "Please enter a valid product id");
     }
 
     public List<Product> getAllProducts() {
