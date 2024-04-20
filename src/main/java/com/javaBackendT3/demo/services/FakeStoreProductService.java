@@ -26,7 +26,7 @@ public class FakeStoreProductService implements ProductService {
             product.setPrice(fakeStoreProductDto.getPrice());
 
             Category category = new Category();
-            category.setDescription(fakeStoreProductDto.getCategory());
+            //category.setDescription(fakeStoreProductDto.getCategory());
             product.setCategory(category);
             product.setDescription(fakeStoreProductDto.getDescription());
             product.setImage(fakeStoreProductDto.getImage());
@@ -47,12 +47,18 @@ public class FakeStoreProductService implements ProductService {
             product.setPrice(fakeStoreProductDto.getPrice());
 
             Category category = new Category();
-            category.setDescription(fakeStoreProductDto.getCategory());
+            //category.setDescription(fakeStoreProductDto.getCategory());
             product.setCategory(category);
             product.setDescription(fakeStoreProductDto.getDescription());
             product.setImage(fakeStoreProductDto.getImage());
             products.add(product);
         }
         return products;
+    }
+
+    @Override
+    public Product createProduct(Product product) {
+        // Not implemented
+        return null;
     }
 }
